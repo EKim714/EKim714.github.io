@@ -5,16 +5,107 @@
 <head>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
 
 	<style type="text/css">
-		#button{
-			width: 95px;
-			height: 30px;
-			background-color: white;
-			border-style: solid;
-			border-color: black;
+
+		a:visited {
+		  color: black;
+		  background-color: transparent;
+		}
+
+		a:hover {
+		  transition: 0.4s ease 0s;
+		  color: white;
+		  -webkit-text-stroke-width: 0.7px;
+          -webkit-text-stroke-color: black;
+		}
+
+
+		#topLine{
+			background-color: black;
+			height: 2px;
+			width: 600px;	
+			position: fixed;
+			top: 15px;	
+			left: 10px;	
+		}
+
+
+		#menu{
+			text-decoration: none;
+			color: black;
+			border: 1.5px solid black;
+			font-size: 16px;
+			padding-right: 16.25px;
+			padding-left: 16.25px;
+			padding-bottom: 3px;
+			padding-top:3px;
+			display: inline-block;
+
+			position: fixed;
+			top: 30px;
+			left: 10px;
+		}
+
+		.dropdown{
+			display: none;
+		}
+
+		#menu:hover + .dropdown{
+			display: block;
+		}
+		.dropdown:hover{
+			display: block;
+		}
+
+		.home{
+			text-decoration: none;
+			border: 1.5px solid black;
+			font-size: 14px;
+			padding-right: 17.5px;
+			padding-left: 17.5px;
+			padding-bottom: 2px;
+			padding-top:2px;
+			display: inline-block;
+
+			position: fixed;
+			top: 56px;
+			left: 10px;
+
+		}
+
+		.journal{
+			text-decoration: none;
+			border: 1.5px solid black;
+			font-size: 14px;
+			padding-right: 13.25px;
+			padding-left: 13.25px;
+			padding-bottom: 2px;
+			padding-top:2px;
+			display: inline-block;
+
+			position: fixed;
+			top: 77.5px;
+			left: 10px;
+
+		}
+
+		.projects{
+			text-decoration: none;
+			border: 1.5px solid black;
+			font-size: 14px;
+			padding-right: 11.75px;
+			padding-left: 11.75px;
+			padding-bottom: 2px;
+			padding-top:2px;
+			display: inline-block;
+
+			position: fixed;
+			top: 99px;
+			left: 10px;
+
 		}
 
 		body{
@@ -29,13 +120,26 @@
 
 
 <body>
-	<a href="journal.html">
 
-	<div id="button">
-		<p style="text-align:center;">Journal</p>
+
+
+	<div id="topLine">
 	</div>
 
+	<div id="menu">
+		<p1><a><b>Menu</b></a></p1>
+	</div>
+
+	<div class="dropdown">
+		<li><a class="home" href=index.html> Home </a></li>
+		<li><a class="journal" href="journal.html"> Journal </a></li>
+		<li><a class="projects" href="projects.html"> Projects </a></li>
+	</div>
+
+
+
 </body>
+
 
 
 </html>
