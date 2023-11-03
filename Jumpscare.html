@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<style type="text/css">
+
+
+	#clock{
+		background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Horlo%C4%9Do_001.svg/800px-Horlo%C4%9Do_001.svg.png);
+		width: 400px;
+		height: 400px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		left: 500px;
+		top: 200px;
+
+	}
+
+	#middle{
+		background-color: black;
+		position: absolute;
+		border-radius: 50%;
+		top: 396px;
+		left: 695.5px;
+		width: 10px;
+		height: 10px;
+	}
+
+	#secondHand{
+		background-color: black;
+		width: 4px;
+		height: 170px;
+		position: absolute;
+		top: 230px;
+		left: 698.5px;
+		animation-name: rotate;
+		animation-duration: 25s;
+		animation-iteration-count: none;
+		transform-origin: bottom;
+		transition: transform 0s ease-in-out 1s;
+
+	}
+
+	@keyframes rotate{
+
+		0%{
+			transform: rotate(0deg);
+		}
+
+		5%{
+			transform: rotate(3deg);
+		}
+
+		10%{
+			transform: rotate(6deg);
+		}
+
+		15%{
+			transform: rotate(9deg);
+		}
+
+		20%{
+			transform: rotate(17deg);
+		}
+
+		25%{
+			transform: rotate(27deg);
+		}
+
+		30%{
+			transform: rotate(40deg);
+		}
+
+		35%{
+		transform: rotate(55deg)
+		}	
+
+		40%{
+		transform: rotate(75deg)
+		}	
+
+		45%{
+		transform: rotate(110deg)
+		}
+
+		50%{
+		transform: rotate(150deg)
+		}
+
+		55%{
+		transform: rotate(190deg)
+		}
+
+		60%{
+		transform: rotate(240deg)
+		}
+
+		65%{
+		transform: rotate(300deg)
+		}
+
+		70%{
+		transform: rotate(360deg)
+		}
+
+		77%{
+		transform: rotate(360deg)
+		}
+
+		82%{
+		transform: rotate(3000deg)
+		}
+
+		100%{
+		#middle.width: 500px;
+		}
+
+
+	}
+
+
+
+	body{
+		margin: 0px;
+		background-color: lightgrey;
+	}
+
+	</style>
+</head>
+
+
+<body>
+
+	<audio src="sneeze2.m4a" id="sneeze"></audio>
+
+	<div id="clock">
+	</div>
+
+	<div id=middle>
+	</div>
+
+	<div id="secondHand">
+	</div>
+
+	<script type="text/javascript">
+		
+
+
+	</script>
+</body>
+
+
+</html>
