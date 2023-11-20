@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<style type="text/css">
+		
+/*		#rock{
+			height: 150px;
+			width: 150px;
+			background-image:url(https://i.pinimg.com/originals/e4/04/54/e404546495f1696a88c89c0d12ddcd21.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+
+		}*/
+	</style>
+</head>
+
+
+<body>
+	<div id="rockrock"></div>
+
+	<script type="text/javascript">
+
+
+		function makeRock () {
+			var rock = document.createElement("div");
+			document.body.appendChild(rock)
+			rock.style.width = "150px"
+			rock.style.height = "150px"
+			rock.style.backgroundImage = "url(https://i.pinimg.com/originals/e4/04/54/e404546495f1696a88c89c0d12ddcd21.png)"
+			rock.style.backgroundSize = "contain"
+			rock.style.backgroundRepeat = "no-repeat"
+			rock.style.display = "inline-block"
+
+			rock.addEventListener("keypress", function(event){
+				rock.style.opacity = "0"    
+			})
+
+		}
+
+		setInterval(makeRock, 500)
+
+	</script>
+</body>
+
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<style type="text/css">
+		
+		#sun{
+			height: 200px;
+			width: 200px;
+			left: 650px;
+			top: 300px;
+			position: absolute;
+			background-image: url(Sun.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			animation-name: sunrise;
+			animation-duration: 15s;
+			animation-iteration-count: none;
+		}
+
+		@keyframes sunrise{
+			0%{
+				top:850px;
+			}
+			20%{
+				top: 200px;
+			}
+			45%{
+				top: 850px;
+			}
+			90%{
+				opacity: 100%;
+			}
+			100%{
+				top: 850px;
+				opacity: 0%;
+			}
+		}
+
+		#moon{
+			height: 130px;
+			width: 130px;
+			left: 650px;
+			top: 300px;
+			position: absolute;
+			background-image: url(Moon.png);
+			opacity: 1;
+			background-repeat: no-repeat;
+			background-size: contain;
+			animation-name: moonrise;
+			animation-duration: 15s;
+			animation-iteration-count: none;
+		}
+
+		@keyframes moonrise{
+			0%{
+				top:850px;
+			}
+			20%{
+				top: 850px;
+			}
+			40%{
+				top: 850px;
+			}
+			70%{
+				top: 200px;
+			}
+			90%{
+				top: 850px;
+				opacity: 100%;
+			}
+			100%{
+				opacity: 0%;
+				top: 850px;
+			}
+		}
+
+		#gradient{
+			height: 1500px;
+			width: 1420px;
+			background-image: linear-gradient(180deg, skyblue, white);
+			opacity: 1;
+			animation-name: movingGradient;
+			animation-duration: 20s;
+			animation-iteration-count: none;
+			}
+
+			@keyframes movingGradient{
+				0%{
+					background-image: linear-gradient(180deg, skyblue, white);
+				}
+				85%{
+					background-image: linear-gradient(180deg, darkblue, black);
+				}
+				86%{
+					background-image: linear-gradient(180deg, skyblue, white);
+				}
+				100%{
+				}
+			}
+
+
+	</style>
+</head>
+
+
+<body>
+
+<div id="gradient">
+</div>
+
+<div id="sun">	
+</div>
+
+<div id="moon">	
+</div>
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+
+
+</html>

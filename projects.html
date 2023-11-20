@@ -6,6 +6,18 @@
 
 	<style type="text/css">
 
+		a:visited {
+		  color: black;
+		  background-color: transparent;
+		}
+
+		a:hover {
+		  transition: 0.4s ease 0s;
+		  color: white;
+		  -webkit-text-stroke-width: 0.3px;
+          -webkit-text-stroke-color: black;
+		}
+
 		#box{
 			height: 150px;
 			width: 150px;
@@ -13,14 +25,29 @@
 			top: 50%;
 			left: 50%;
 			position: absolute;
+			z-index: 1;
 
 
 		}
 
+		#gratitude{
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			height: 35px;
+			width: 175px;
+			font-size: 25px;
+			z-index: 2;
+
+		}
+
+
+
 		body{
 			font-family: 'Comic Neue', cursive;
 			color: white;
-			border-color: black;
+			-webkit-text-stroke-width: 0.7px;
+          	-webkit-text-stroke-color: black;
 			}
 
 	</style>
@@ -33,6 +60,9 @@
 	<div id="box">
 		<p>Click Me</p>
 	</div>
+
+	<li><a id="gratitude" href=gratitudeCard.html> Gratitude Card </a></li>
+	</a></p1>
 
 	<script type="text/javascript">
 
