@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+	<style type="text/css">
+
+		#box{
+			height: 150px;
+			width: 150px;
+			background-color: black;
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			z-index: 1;
+			text-align: center;
+
+
+		}
+
+		body{
+			font-family: 'Comic Neue', cursive;
+			color: white;
+			-webkit-text-stroke-width: 0.7px;
+          	-webkit-text-stroke-color: black;
+			}
+
+	</style>
+
+</head>
+
+
+<body>
+
+	<div id="box">
+		<h3>Click Me</h3>
+	</div>
+
+	<script type="text/javascript">
+
+		var count = 0;
+
+				document.addEventListener("click", function(event){
+					var modevan = count%3;
+					console.log(event)
+					console.log(count)
+					count ++
+					
+					console.log (modevan)
+					 /*for (let i=0; i<4; i++) { */
+						
+						if (modevan == 0) {
+							box.style.backgroundColor = "blue"
+							
+						}
+						if (modevan == 1) {
+							box.style.backgroundColor = "red"
+							
+						}
+						
+	
+						if (modevan == 2) {
+							box.style.backgroundColor = "black"
+						}
+				})
+				/*	} */
+
+					
+					
+				
+			
+			 	document.addEventListener("mousemove", function(follow){
+
+					box.style.left = follow.clientX - 75 + "px";
+			 		box.style.top = follow.clientY - 75 + "px";
+			 		console.log(event.clientX, event.clientY)
+			})
+
+
+	</script>
+
+</body>
+
+
+</html>

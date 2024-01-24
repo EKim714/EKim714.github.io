@@ -18,24 +18,39 @@
           -webkit-text-stroke-color: black;
 		}
 
-		#box{
-			height: 150px;
-			width: 150px;
-			background-color: black;
-			top: 50%;
-			left: 50%;
-			position: absolute;
-			z-index: 1;
-
-
 		}
 
 		#gratitude{
-			position: absolute;
-			left: 10px;
-			top: 10px;
+			position: relative;
 			height: 35px;
-			width: 175px;
+			width: 300px;
+			font-size: 50px;
+			z-index: 2;
+
+		}
+
+		#square{
+			position: relative;
+			height: 35px;
+			width: 300px;
+			font-size: 25px;
+			z-index: 2;
+
+		}
+
+		#taco{
+			position: relative;
+			height: 35px;
+			width: 300px;
+			font-size: 25px;
+			z-index: 2;
+
+		}
+
+		#array{
+			position: relative;
+			height: 35px;
+			width: 300px;
 			font-size: 25px;
 			z-index: 2;
 
@@ -57,55 +72,21 @@
 
 <body>
 
-	<div id="box">
-		<p>Click Me</p>
-	</div>
+	<h2>
+		<a id="gratitude" href=gratitudeCard.html> Gratitude Card </a>
+	</h2>
 
-	<li><a id="gratitude" href=gratitudeCard.html> Gratitude Card </a></li>
-	</a></p1>
+	<h2>
+		<a id="square" href=square.html> Color Cycling Square </a>
+	</h2>
 
-	<script type="text/javascript">
+	<h2>
+		<a id="taco" href=Taco.html> Taco Toppings </a>
+	</h2>
 
-		var count = 0;
-
-				document.addEventListener("click", function(event){
-					var modevan = count%3;
-					console.log(event)
-					console.log(count)
-					count ++
-					
-					console.log (modevan)
-					 /*for (let i=0; i<4; i++) { */
-						
-						if (modevan == 0) {
-							box.style.backgroundColor = "blue"
-							
-						}
-						if (modevan == 1) {
-							box.style.backgroundColor = "red"
-							
-						}
-						
-	
-						if (modevan == 2) {
-							box.style.backgroundColor = "black"
-						}
-				})
-				/*	} */
-
-					
-					
-				
-			
-			 	document.addEventListener("mousemove", function(follow){
-
-					box.style.left = follow.clientX - 75 + "px";
-			 		box.style.top = follow.clientY - 75 + "px";
-			 		console.log(event.clientX, event.clientY)
-			})
-
-
-	</script>
+	<h2>
+		<a id="array" href=Array.html> Arrays </a>
+	</h2>
 
 </body>
 

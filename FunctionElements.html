@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<style type="text/css">
+
+	.a{
+		width: 100px;
+		height: 100px;
+		background-color: black;
+		border: solid white;
+		top: 30px;
+		display: inline-block;
+		position: static;
+		z-index: 0;
+	}
+
+	#count{
+		width: 100px;
+		height: 45px;
+		top: 0px;
+		left: 0px;
+		text-align: center;
+		background-color: white;
+		position: fixed;
+		z-index: 1;
+	}
+
+	</style>
+</head>
+
+
+<body>
+	<div class = "a"></div>
+	<div id = "count"><h3>Count: 0</h3></div>
+
+	<script type="text/javascript">
+
+		document.getElementById("count").innerHTML="Count: 0";
+		document.getElementById("count").style.fontSize = "x-large";
+
+		
+		
+		function b(x) {
+				var c = document.createElement("div")
+				document.body.appendChild(c)
+				c.classList.add("a")
+				document.getElementById("count").innerText = "Count: " + x;
+			}
+		}
+
+
+		// for (let i = 0; i < 51; i++) {
+    			
+		for (var counter=0; counter<50; counter=counter+1) {b(counter)}
+
+			
+
+	</script>
+</body>
+
+
+</html>
