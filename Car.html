@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style type="text/css">
+		
+		#car{
+			width: 100px;
+			height: 100px;
+			background-image: url(Car.png);
+			position: absolute;
+			left: 400px;
+
+		}
+
+	</style>
+</head>
+
+
+<body>
+
+	<div id="car"></div>
+
+	<script type="text/javascript">
+
+        var intervalId;
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key == "a") {
+                intervalId = setInterval(() => {
+                    var currentLeft = parseInt(car.style.left) || 400;
+                    car.style.left = (currentLeft - 5) + "px";
+                }, 30);
+            }
+
+            if (event.key == "d") {
+                intervalId = setInterval(() => {
+                    var currentLeft = parseInt(car.style.left) || 400;
+                    car.style.left = (currentLeft + 5) + "px";
+                }, 30);
+            }
+        });
+
+        document.addEventListener("keyup", () => {
+            clearInterval(intervalId);
+        });
+
+
+	</script>
+</body>
+
+
+</html>

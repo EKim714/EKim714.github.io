@@ -19,7 +19,7 @@
 		.toppings{
 			height: 115px;
 			width: 115px;
-			position: absolute;
+			position: relative;
 			background-size: contain;
 			background-repeat: no-repeat;
 			display: inline-block;
@@ -63,65 +63,73 @@
 
 <body>
 
-	<div id="background"></div>
-
-	<div id= "taco"></div>
+	<!-- <div id="background"></div> -->
 	<div id= "steak" class="toppings"></div>
 	<div id= "beans" class="toppings"></div>
 	<div id= "cheese" class="toppings"></div>
 	<div id= "lettuce" class="toppings"></div>
 
+	<div id= "taco"></div>
+	
+
 
 	<script type="text/javascript">
 
-		var top = "Steak.png"; // Declare top as a global variable
+		var image = "Steak.png";
+		
+		function addTopping(event) {
+			// var taco = document.getElementById("taco");
+			var top = document.createElement("div");
+			var rot = Math.floor((Math.random() * 360) + 1);
+			top.style.height = "115px";
+			top.style.width = "115px";
+			top.style.position = "absolute";
+			top.style.backgroundSize = "cover";
+			top.style.backgroundImage = "url(" + image + ")";
+			top.style.transform = "rotate(" + rot + "deg)";
 
-    function addTopping(event) {
-        var taco = document.getElementById("taco");
+			taco.addEventListener("mousemove", function(event) {
+				console.log(event)
 
-        var steak = document.createElement("div"); // Change "Topping" to "div"
-        var rot = Math.floor((Math.random() * 360) + 1);
-        steak.style.height = "115px";
-        steak.style.width = "115px";
-        steak.style.position = "absolute";
-        steak.style.backgroundSize = "cover";
-        steak.style.backgroundImage = "url(" + top + ")";
-        steak.style.transform = "rotate(" + rot + "deg)";
+			var x = event.clientX  + "px";
+			var y = event.clientY + "px";
+			console.log(x)
+			console.log(y)
 
-        // Move the event listener inside addTopping function
-        taco.addEventListener("mousemove", function(event) {
-            // Your code for handling mousemove
-        });
 
-        taco.appendChild(steak);
-        steak.style.left = event.clientX - 87.5 + "px";
-        steak.style.top = event.clientY - 87.5 + "px";
-    }
+			});
 
-    // Add event listeners to change the 'top' variable
-    document.getElementById("steak").addEventListener("click", function(){
-        top = "Steak.png";
-        console.log(top);
-    });
 
-    document.getElementById("beans").addEventListener("click", function(){
-        top = "Beans.png";
-        console.log(top);
-    });
+			document.body.appendChild(top);
 
-    document.getElementById("cheese").addEventListener("click", function(){
-        top = "Cheese.png";
-        console.log(top);
-    });
+			top.style.left=x;
+			top.style.top=y;
+			
 
-    document.getElementById("lettuce").addEventListener("click", function(){
-        top = "Lettuce.png";
-        console.log(top);
-    });
+		};
 
-    // Add event listener to the 'taco' div
-    document.getElementById("taco").addEventListener("click", addTopping);
+			document.getElementById("steak").addEventListener("click", function(){
+				image = "Steak.png"
+				console.log(image)
+			})
 
+			document.getElementById("beans").addEventListener("click", function(){
+				image = "Beans.png"
+				console.log(image)
+			})
+
+			document.getElementById("cheese").addEventListener("click", function(){
+				image = "Cheese.png"
+				console.log(image)
+			})
+
+			document.getElementById("lettuce").addEventListener("click", function(){
+				image = "Lettuce.png"
+				console.log(image)
+			})
+
+
+		 document.getElementById("taco").addEventListener("click", addTopping);
 
 	</script>
 </body>

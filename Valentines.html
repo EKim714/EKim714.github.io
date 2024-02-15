@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<style type="text/css">
+
+		#heart {
+			height: 100px;
+			width: 125px;
+			position: absolute;
+			background-image: url("Heart.png");
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		#score {
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			left: 45%;
+		}
+
+	</style>
+</head>
+
+
+<body>
+	<div id="heart"></div>
+	<div id="score">
+		<h2>Score: 0</h2>
+	</div>
+
+	<script type="text/javascript">
+
+		var heart = document.getElementById("heart")
+		var score = document.getElementById("score")
+		var scorenum = 0
+		var y_inc = 10;
+		var x_inc = 10;
+
+		heart.style.left = Math.round(Math.random()* 600) + "px"
+		heart.style.top = Math.round(Math.random()* 600) + "px"
+
+		function handleCollision () {
+			let heart_height = heart.offsetHeight;
+			let heart_width = heart.offsetWidth;
+			let heart_top = heart.offsetTop;
+			let heart_left = heart.offsetLeft;
+			let win_height = window.innerHeight;
+			let win_width = window.innerWidth;
+		
+
+			if (heart_left <=0 || heart_left + heart_width >= win_width) {
+				//reverse x increment
+				x_inc *= -1;
+			} else if (heart_top <=0 || heart_top + heart_height >= win_height) {
+				//reverse y increment
+				y_inc *= -1;
+			} else if (heart_top <=10 && heart_left <=10 || heart_top >= (win_height - 10) && heart_left >= (win_width - 10)) {
+				//reverse y increment
+				scorenum = scorenum + 1
+				console.log(scorenum)
+			}
+
+			// if (heart_left <= 0 && heart_top <= 0) { //top left
+			// 	scorenum = scorenum + 1
+			// } else if (heart_left >= win_width && heart_top >= win_height) { //bottom right
+			// 	scorenum = scorenum + 1
+			// } else if (heart_left >= win_width && heart_top >= 0) { //top right
+			// 	scorenum = scorenum + 1
+			// } else if (heart_left >= 0 && heart_top >= win_height) { //bottom left
+			// 	scorenum = scorenum + 1
+			// }
+
+			score.innerText = "Score: " + scorenum
+	}	
+
+
+		function frame() {
+			handleCollision();
+			heart.style.top = heart.offsetTop + y_inc + "px";
+			heart.style.left = heart.offsetLeft + x_inc + "px";
+		}
+
+		function active () {
+			setInterval(frame, 5)
+		}
+
+		active();
+
+		document.addEventListener("")
+
+
+		// function move () {
+		// 	x += Math.round((Math.random() * 10) - 5);
+        //     y += Math.round((Math.random() * 10) - 5);
+        //     heart.style.left = x + "px";
+        //     heart.style.top = y + "px";
+		// }
+
+        // var intervalId = setInterval(move, 5);
+
+        // setTimeout(function() {
+        //     clearInterval(intervalId);
+        // }, 100000);
+
+	</script>
+</body>
+
+
+</html>
