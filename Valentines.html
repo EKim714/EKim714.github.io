@@ -51,10 +51,10 @@
 			let win_width = window.innerWidth;
 		
 
-			if (heart_left <=0 || heart_left + heart_width >= win_width) {
+			if (heart_left <=1 || heart_left + heart_width >= win_width) {
 				//reverse x increment
 				x_inc *= -1;
-			} else if (heart_top <=0 || heart_top + heart_height >= win_height) {
+			} else if (heart_top <=1 || heart_top + heart_height >= win_height) {
 				//reverse y increment
 				y_inc *= -1;
 			} else if (heart_top <=10 && heart_left <=10 || heart_top >= (win_height - 10) && heart_left >= (win_width - 10)) {
