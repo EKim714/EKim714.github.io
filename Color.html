@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<style type="text/css">
+		body {
+			background-color: rgba(0, 0, 0, 1.0);
+		}
+
+	</style>
+</head>
+
+
+<body>
+	<script type="text/javascript">
+
+		var R = null
+		var G = null
+		var B = null
+		
+		document.addEventListener("click", function(event) {
+
+				R = Math.round(Math.random()* 255 * Math.random() * 1.2);
+				G = Math.round(Math.random()* 255 * Math.random() * 1.2);
+				B = Math.round(Math.random()* 255 * Math.random() * 1.2);
+
+				var a = event.clientX
+				var b = event.clientY
+				var c = a/(window.innerWidth/255);
+				var d = b/(window.innerHeight/255);
+
+				console.log(R, G, B)
+
+				document.body.style.backgroundColor = "rgba(" + c + "," + d + "," + "0" + "1.0)";
+		})
+
+	</script>
+</body>
+
+
+</html>
