@@ -22,33 +22,73 @@
             font-size: 20px;
         }
 
+        #line1 {
+            width: 10px;
+            height: 1000px;
+            background-color: black;
+            position: absolute;
+            left: 400px;
+        }
+
+        #line2 {
+            width: 10px;
+            height: 1000px;
+            background-color: black;
+            position: absolute;
+            left: 1100px;
+        }
+
+        body{
+            overflow: hidden;
+        }
+
 	</style>
 </head>
 
 
 <body>
 
+    <div id="line1"></div>
+    <div id="line2"></div>
+
 	<div id="car"></div>
-    <p id="title">Weird drunk driving simulator</p>
+    <p id="title"><br>Try and hit the two lines (its buggy)</p>
 
 	<script type="text/javascript">
 
         var intervalId;
 
+        line2.style.backgroundColor = "white"
+
         document.addEventListener("keydown", (event) => {
-            if (event.key == "a") {
+            if (event.key == "a" || event.key == "ArrowLeft") {
                 intervalId = setInterval(() => {
-                    var currentLeft = parseInt(car.style.left) || 400;
+                    var currentLeft = parseInt(car.style.left) || 0;
                     car.style.left = (currentLeft - 5) + "px";
                 }, 30);
             }
 
-            if (event.key == "d") {
+            if (event.key == "d" || event.key == "ArrowRight") {
                 intervalId = setInterval(() => {
-                    var currentLeft = parseInt(car.style.left) || 400;
+                    var currentLeft = parseInt(car.style.left) || 0;
                     car.style.left = (currentLeft + 5) + "px";
                 }, 30);
             }
+
+            if (car.style.left <= "400") {
+                line2.style.backgroundColor = "black"
+                line1.style.backgroundColor = "white"
+            } else if (car.style.left >= "1100") {
+                line2.style.backgroundColor = "white"
+                line1.style.backgroundColor = "black"
+            }
+
+            // if (car.style.left <= "0") {
+            //     car.style.left = "100px"
+            // } else if (car.style.left >= "1400") {
+            //     car.style.left = "1100px"
+            // }
+
         });
 
         document.addEventListener("keyup", () => {
