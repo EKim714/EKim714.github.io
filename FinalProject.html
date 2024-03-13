@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<style type="text/css">
+		
+		.bars {
+			height: 29px;
+			width: 110px;
+			top: 650px;
+			opacity: 0.7;
+			position: absolute;
+			border: solid whitesmoke 2px;
+			border-radius: 70px;
+			transition: 0.2s;
+		}
+
+		.letter {
+			height: 25px;
+			width: 25px;
+			position: absolute;
+			top: 700px;
+			font-size: 25px;
+			color: whitesmoke;
+
+		}
+
+		.input {
+			height: 25px;
+			width: 10px;
+			position: absolute;
+		}
+
+		.button {
+			position: absolute;
+			left: 40px;
+		}
+
+
+		#letter1 {
+			left: 35.5%;
+		}
+		#letter2 {
+			left: 45.8%;
+		}
+		#letter3 {
+			left: 55.8%;
+		}
+		#letter4 {
+			left: 65.8%;
+		}
+
+
+		#bar1 {
+			left: 32%;
+		}
+
+		#bar2 {
+			left: 42%;
+		}
+
+		#bar3 {
+			left: 52%;
+		}
+
+		#bar4 {
+			left: 62%;
+		}
+
+		#side1 {
+			position: absolute;
+			left: 440px;
+			top: -10px;
+			height: 1000px;
+			width: 5px;
+			background-color: whitesmoke;
+		}
+
+		#side2 {
+			position: absolute;
+			left: 1021px;
+			top: -10px;
+			height: 1000px;
+			width: 5px;
+			background-color: whitesmoke;
+		}
+
+		#input1 {
+			top: 50px;
+		}
+		#input2 {
+			top: 100px;
+		}
+		#input3 {
+			top: 150px;
+		}
+		#input4 {
+			top: 200px;
+		}
+
+		#submit1 {
+			top: 55px;
+		}
+		#submit2 {
+			top: 105px;
+		}
+		#submit3 {
+			top: 155px;
+		}
+		#submit4 {
+			top: 205px;
+		}
+
+
+		body {
+			background-color: black;
+			font-family: 'Comic Neue';
+			overflow: hidden;
+		}
+
+	</style>
+</head>
+
+
+<body>
+	<div class="bars" id="bar1"></div>
+	<div class="bars" id="bar2"></div>
+	<div class="bars" id="bar3"></div>
+	<div class="bars" id="bar4"></div>
+
+	<div id="side1"></div>
+	<div id="side2"></div>
+
+	<div class="letter" id="letter1"></div>
+	<div class="letter" id="letter2"></div>
+	<div class="letter" id="letter3"></div>
+	<div class="letter" id="letter4"></div>
+
+	<input class="input" id="input1"></input>
+	<button class="button" id="submit1">Enter Key 1</button>
+
+	<input class="input" id="input2"></input>
+	<button class="button" id="submit2">Enter Key 2</button>
+
+	<input class="input" id="input3"></input>
+	<button class="button" id="submit3">Enter Key 3</button>
+
+	<input class="input" id="input4"></input>
+	<button class="button" id="submit4">Enter Key 4</button>
+
+	<script type="text/javascript">
+
+		var key1
+		var key2
+		var key3
+		var key4
+
+		var Keydown1 = false
+		var Keydown2 = false
+		var Keydown3 = false
+		var Keydown4 = false
+
+		submit1.addEventListener("click", function() {
+			key1 = input1.value
+			letter1.innerText = key1
+		})
+
+		submit2.addEventListener("click", function() {
+			key2 = input2.value
+			letter2.innerText = key2
+		})
+
+		submit3.addEventListener("click", function() {
+			key3 = input3.value
+			letter3.innerText = key3
+		})
+
+		submit4.addEventListener("click", function() {
+			key4 = input4.value
+			letter4.innerText = key4
+		})
+
+		//---------------------------------------------// 1
+
+		document.addEventListener("keydown", (event) => {
+			if (event.key == key1 && Keydown1 == false) {
+
+				Keydown1 = true
+				bar1.style.backgroundColor = "pink"
+
+			} 
+		})
+
+		document.addEventListener("keyup", (event) => {
+			if (event.key == key1) {
+				Keydown1 = false
+				bar1.style.backgroundColor = "black"
+			} 
+		})
+
+		//---------------------------------------------// 2
+
+		document.addEventListener("keydown", (event) => {
+			if (event.key == key2 && Keydown2 == false) {
+
+				Keydown2 = true
+				bar2.style.backgroundColor = "Cyan"
+
+			} 
+		})
+
+		document.addEventListener("keyup", (event) => {
+			if (event.key == key2) {
+				Keydown2 = false
+				bar2.style.backgroundColor = "black"
+			} 
+		})
+
+		//---------------------------------------------// 3
+
+		document.addEventListener("keydown", (event) => {
+			if (event.key == key3 && Keydown3 == false) {
+
+				Keydown3 = true
+				bar3.style.backgroundColor = "Cyan"
+
+			} 
+		})
+
+		document.addEventListener("keyup", (event) => {
+			if (event.key == key3) {
+				Keydown3 = false
+				bar3.style.backgroundColor = "black"
+			} 
+		})
+
+		//---------------------------------------------// 4
+
+		document.addEventListener("keydown", (event) => {
+			if (event.key == key4 && Keydown4 == false) {
+
+				Keydown4 = true
+				bar4.style.backgroundColor = "pink"
+
+			} 
+		})
+
+		document.addEventListener("keyup", (event) => {
+			if (event.key == key4) {
+				Keydown4 = false
+				bar4.style.backgroundColor = "black"
+			} 
+		})
+
+
+	</script>
+</body>
+
+
+</html>
