@@ -37,6 +37,14 @@
 			left: 40px;
 		}
 
+		.note {
+			position: absolute;
+			height: 29px;
+			width: 110px;
+			border-radius: 70px;
+			opacity: 1;
+		}
+
 
 		#letter1 {
 			left: 35.5%;
@@ -113,6 +121,24 @@
 		}
 
 
+		#note1 {
+			left: 32.1%;
+			background-color: pink;
+		}
+		#note2 {
+			left: 42.2%;
+			background-color: cyan;
+		}
+		#note3 {
+			left: 52.2%;
+			background-color: cyan;
+		}
+		#note4 {
+			left: 62.2%;
+			background-color: pink;
+		}
+
+
 		body {
 			background-color: black;
 			font-family: 'Comic Neue';
@@ -149,6 +175,11 @@
 	<input class="input" id="input4"></input>
 	<button class="button" id="submit4">Enter Key 4</button>
 
+	<div class="note" id="note1"></div>
+	<div class="note" id="note2"></div>
+	<div class="note" id="note3"></div>
+	<div class="note" id="note4"></div>
+
 	<script type="text/javascript">
 
 		var key1
@@ -160,6 +191,8 @@
 		var Keydown2 = false
 		var Keydown3 = false
 		var Keydown4 = false
+
+		var started = false
 
 		submit1.addEventListener("click", function() {
 			key1 = input1.value
@@ -181,7 +214,7 @@
 			letter4.innerText = key4
 		})
 
-		//---------------------------------------------// 1
+		//---------------------------------------------// KEYBINDS 1
 
 		document.addEventListener("keydown", (event) => {
 			if (event.key == key1 && Keydown1 == false) {
@@ -199,7 +232,7 @@
 			} 
 		})
 
-		//---------------------------------------------// 2
+		//---------------------------------------------// KEYBINDS 2
 
 		document.addEventListener("keydown", (event) => {
 			if (event.key == key2 && Keydown2 == false) {
@@ -217,7 +250,7 @@
 			} 
 		})
 
-		//---------------------------------------------// 3
+		//---------------------------------------------// KEYBINDS 3
 
 		document.addEventListener("keydown", (event) => {
 			if (event.key == key3 && Keydown3 == false) {
@@ -235,7 +268,7 @@
 			} 
 		})
 
-		//---------------------------------------------// 4
+		//---------------------------------------------// KEYBINDS 4
 
 		document.addEventListener("keydown", (event) => {
 			if (event.key == key4 && Keydown4 == false) {
@@ -252,6 +285,68 @@
 				bar4.style.backgroundColor = "black"
 			} 
 		})
+
+		//---------------------------------------------// NOTE FALLING
+
+		note1.style.opacity = 0
+		note2.style.opacity = 0
+		note3.style.opacity = 0
+		note4.style.opacity = 0
+
+		document.addEventListener("keydown", (event) => {
+			if (event.key == " " && started == false) {
+				started = true
+
+				note1.style.opacity = 1
+				note2.style.opacity = 1
+				note3.style.opacity = 1
+				note4.style.opacity = 1
+
+		// Function to generate a random interval for note falling
+        function getRandomInterval() {
+            return Math.random() * 1000 + 200;
+        }
+
+        // Function to start the falling of a note
+        function startNoteFall(noteId) {
+            var note = document.getElementById(noteId);
+            var position = 0;
+            var speed = 20; // Adjust this value to change the falling speed
+
+            // Function to update note position
+            function updateNotePosition() {
+                position += speed;
+                note.style.top = position + "px";
+
+                console.log(position)
+
+                // Check if note reached a certain height
+                if (position < 645) {
+                	// note1.style.opacity = 0
+					// note2.style.opacity = 0
+					// note3.style.opacity = 0
+					// note4.style.opacity = 0
+                    requestAnimationFrame(updateNotePosition);
+                } else {
+                    // Restart the falling animation
+                    position = 0;
+                    setTimeout(updateNotePosition, getRandomInterval());
+                }
+            }
+
+            // Start updating note position
+            updateNotePosition();
+        }
+
+        // Start falling of each note
+        startNoteFall("note1");
+        startNoteFall("note2");
+        startNoteFall("note3");
+        startNoteFall("note4");
+			} 
+		})
+
+		
 
 
 	</script>

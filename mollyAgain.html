@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style>
+		
+		#evan{
+			width:100px;
+			height:100px;
+			background-color:red;
+			position:absolute;
+			top:0pxr;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="evan"></div>
+
+	<script type="text/javascript">
+
+
+		var fall = Math.random()*1000
+		var fromTop = Math.random()*5000
+		var y = 0;
+		evan.style.top = "0px";
+
+		// evan.style.top =  fromTop + "px"
+		console.log(fromTop)
+
+		function falling (){
+			evan.style.top = y +"px"
+			y = y + 20;
+		}
+
+		function fallingFromTop () 
+		{setInterval(falling, 100)}
+
+		setTimeout(fallingFromTop, fall)
+
+		
+		
+	</script>
+
+</body>
+</html>
