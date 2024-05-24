@@ -2,24 +2,26 @@
 
 
 <head>
-
-
+	<style type="text/css">
+		
+	</style>
 </head>
 
 
 <body>
-	<input id="word"></input>
+	<div id="list"></div>
+	
+	<input id="input1"></input>
 	<button id="Submit">Enter</button>
 
 	<script type="text/javascript">
 		
 		var num = 1
-		var list = Array( );
+		var array = Array( );
 
 		Submit.addEventListener("click", function() {
-			list.push(word)
+			array.push(word.value)
 			num = num + 1
-			console.log(word)
 
 			word.value = "";
 		})

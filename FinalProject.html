@@ -106,6 +106,10 @@
 		#input4 {
 			top: 200px;
 		}
+		#input5 {
+			width: 30px;
+			top: 300px;
+		}
 
 		#submit1 {
 			top: 55px;
@@ -118,6 +122,10 @@
 		}
 		#submit4 {
 			top: 205px;
+		}
+		#submit5 {
+			left: 60px;
+			top: 305px;
 		}
 
 
@@ -185,6 +193,9 @@
 	<input class="input" id="input4"></input>
 	<button class="button" id="submit4">Enter Key 4</button>
 
+	<input class="input" id="input5"></input>
+	<button class="button" id="submit5">Enter Note Speed</button>
+
 	<div class="note" id="note1"></div>
 	<div class="note" id="note2"></div>
 	<div class="note" id="note3"></div>
@@ -201,6 +212,8 @@
 		var Keydown2 = false
 		var Keydown3 = false
 		var Keydown4 = false
+
+		var noteSpeed
 
 		var started = false
 
@@ -223,6 +236,12 @@
 			key4 = input4.value
 			letter4.innerText = key4
 		})
+
+		submit5.addEventListener("click", function() {
+			noteSpeed = input5.value
+		})
+
+		
 
 		//---------------------------------------------// KEYBINDS 1
 
@@ -303,6 +322,7 @@
 		note3.style.opacity = 0
 		note4.style.opacity = 0
 
+
 		document.addEventListener("keydown", (event) => {
 			if (event.key == " " && started == false) {
 				started = true
@@ -321,7 +341,7 @@
         function startNoteFall(noteId) {
             var note = document.getElementById(noteId);
             var position = 0;
-            var speed = 20; // Adjust this value to change the falling speed
+            var speed = parseInt(noteSpeed); // Adjust this value to change the falling speed
 
             // Function to update note position
             function updateNotePosition() {
@@ -332,10 +352,6 @@
 
                 // Check if note reached a certain height
                 if (position < 645) {
-                	// note1.style.opacity = 0
-					// note2.style.opacity = 0
-					// note3.style.opacity = 0
-					// note4.style.opacity = 0
                     requestAnimationFrame(updateNotePosition);
                 } else {
                     // Restart the falling animation

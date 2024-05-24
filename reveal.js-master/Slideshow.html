@@ -8,101 +8,29 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/blood.css">
+		<link rel="stylesheet" href="dist/theme/white-contrast.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
+
 	<body>
+
 		<div class="reveal">
 			<div class="slides">
-				<section>
-					<h3>School subject statistics (This is not supposed to be offensive)</h3>
+				<section data-auto-animate>
+					<h3>Final Project Slideshow</h3>
 				</section>
 
-				<section>English</section>
-					<section data-auto-animate>
-					  <h5>Homework (10 is a lot): 7/10</h5>
-					</section>
-					<section data-auto-animate>
-					  <h5>Homework (10 is a lot): 7/10</h5>
-					  <h5>Engagement/Fun: 5/10</h5>
-					</section>
-					<section data-auto-animate>
-					  <h5>Homework (10 is a lot): 7/10</h5>
-					  <h5>Engagement/Fun: 5/10</h5>
-					  <h5>Tests/Essay difficulty: 9/10</h5>
-					</section>
+				<section data-auto-animate>
+					<div id="stick1">
+						<img  src="Stickman.png" width="450px" height="450px">
+					</div>
+					<div id="stick2">
+						<img  src="Stickman2.png" width="450px" height="450px">
+					</div>
+				</section>
 
-					<section>History</section>
-					<section data-auto-animate>
-					  <h5>Homework: 7.5/10</h5>
-					</section>
-					<section data-auto-animate>
-					  <h5>Homework: 7.5/10</h5>
-					  <h5>Engagement/Fun: 6/10</h5>
-					</section>
-					<section data-auto-animate>
-					  <h5>Homework: 7.5/10</h5>
-					  <h5>Engagement/Fun: 6/10</h5>
-					  <h5>Tests/Essay difficulty: 8/10</h5>
-					</section>
-
-					<section>Math</section>
-					<section data-auto-animate>
-					  <h5>Homework: 6/10</h5>
-					</section>
-					<section data-auto-animate>
-					  <h5>Homework: 6/10</h5>
-					  <h5>Engagement/Fun: 7/10</h5>
-					</section>
-					<section data-auto-animate>
-					  <h5>Homework: 6/10</h5>
-					  <h5>Engagement/Fun: 7/10</h5>
-					  <h5>Tests/Essay difficulty: 8.5/10</h5>
-					</section>
-
-					<section>Biology</section>
-					<section data-auto-animate>
-					  <h5>Homework: 3/10</h5>
-					</section>
-					<section data-auto-animate>
-					  <h5>Homework: 3/10</h5>
-					  <h5>Engagement/Fun: 6.5/10</h5>
-					</section>
-					<section data-auto-animate>
-					  <h5>Homework: 3/10</h5>
-					  <h5>Engagement/Fun: 6.5/10</h5>
-					  <h5>Tests/Essay difficulty: 8.5/10</h5>
-					</section>
-
-					<section>Latin</section>
-					<section data-auto-animate>
-					  <h5>Homework: 8/10</h5>
-					</section>
-					<section data-auto-animate>
-					  <h5>Homework: 8/10</h5>
-					  <h5>Engagement/Fun: 7.5/10</h5>
-					</section>
-					<section data-auto-animate>
-					  <h5>Homework: 8/10</h5>
-					  <h5>Engagement/Fun: 7.5/10</h5>
-					  <h5>Tests/Essay difficulty: 7/10</h5>
-					</section>
-
-					<section>Drawing</section>
-					<section data-auto-animate>
-					  <h5>Homework: 0/10</h5>
-					</section>
-					<section data-auto-animate>
-					  <h5>Homework: 0/10</h5>
-					  <h5>Engagement/Fun: 10/10</h5>
-					</section>
-					<section data-auto-animate>
-					  <h5>Homework: 0/10</h5>
-					  <h5>Engagement/Fun: 10/10</h5>
-					  <h5>Tests/Essay difficulty: 0/10</h5>
-					</section>
 			</div>
 		</div>
 
@@ -111,6 +39,27 @@
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
+
+			var stick1 = document.getElementById("stick1")
+			var stick2 = document.getElementById("stick2")
+
+			stick1.style.position = "absolute"
+			stick2.style.position = "absolute"
+
+			stick1.style.left = "700px"
+			stick2.style.left = "0px"
+
+			stick1.style.transition = "all 1s"
+			stick2.style.transition = "all 1s"
+
+			stick1.addEventListener("click", function(){
+				stick1.style.left = "385px"
+			})
+			stick2.addEventListener("click", function(){
+				stick2.style.left = "215px"
+			})
+
+
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/

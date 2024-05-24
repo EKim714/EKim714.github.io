@@ -193,6 +193,15 @@
 			 }
 		}
 
+		#name{
+			height: 300px;
+			width: 500px;
+			position: absolute;
+			left: 450px;
+			top: 300px;
+			color: black;
+			font-size: 75px;
+		}
 
 		body{
 			font-family: 'Comic Neue', cursive;
@@ -206,6 +215,8 @@
 
 
 <body>
+
+	<div id="name"><p>Evan's Website</p></div>
 
 	<div id="container1" class="contain">
 		<div id = "arrow1" class="arrow">--></div>
@@ -243,6 +254,7 @@
 		var projects = document.getElementById("projects")
 		var arrow1 = document.getElementById("arrow1")
 		var arrow2 = document.getElementById("arrow2")
+		var name = document.getElementById("name")
 	
 		container1.addEventListener("mouseenter", function(){
 			arrow1.style.opacity = "1"
@@ -252,6 +264,17 @@
 		container1.addEventListener("mouseleave", function(){
 			arrow1.style.opacity = "0"
 			arrow2.style.opacity = "0"
+		})
+
+		name.addEventListener("mousemove", function() {
+
+				var a = event.clientX
+				var b = event.clientY
+				var c = a/(window.innerWidth/255);
+				var d = b/(window.innerHeight/255);
+
+				name.style.color = "rgba(" + c + "," + d + "," + "0" + "1.0)";
+
 		})
 
 	</script>
