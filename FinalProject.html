@@ -201,181 +201,139 @@
 	<div class="note" id="note3"></div>
 	<div class="note" id="note4"></div>
 
-	<script type="text/javascript">
+<script type="text/javascript">
+    var key1, key2, key3, key4;
+    var Keydown1 = false, Keydown2 = false, Keydown3 = false, Keydown4 = false;
+    var noteSpeed;
+    var started = false;
 
-		var key1
-		var key2
-		var key3
-		var key4
+    submit1.addEventListener("click", function() {
+        key1 = input1.value;
+        letter1.innerText = key1;
+    });
 
-		var Keydown1 = false
-		var Keydown2 = false
-		var Keydown3 = false
-		var Keydown4 = false
+    submit2.addEventListener("click", function() {
+        key2 = input2.value;
+        letter2.innerText = key2;
+    });
 
-		var noteSpeed
+    submit3.addEventListener("click", function() {
+        key3 = input3.value;
+        letter3.innerText = key3;
+    });
 
-		var started = false
+    submit4.addEventListener("click", function() {
+        key4 = input4.value;
+        letter4.innerText = key4;
+    });
 
-		submit1.addEventListener("click", function() {
-			key1 = input1.value
-			letter1.innerText = key1
-		})
+    submit5.addEventListener("click", function() {
+        noteSpeed = parseInt(input5.value);
+    });
 
-		submit2.addEventListener("click", function() {
-			key2 = input2.value
-			letter2.innerText = key2
-		})
-
-		submit3.addEventListener("click", function() {
-			key3 = input3.value
-			letter3.innerText = key3
-		})
-
-		submit4.addEventListener("click", function() {
-			key4 = input4.value
-			letter4.innerText = key4
-		})
-
-		submit5.addEventListener("click", function() {
-			noteSpeed = input5.value
-		})
-
-		
-
-		//---------------------------------------------// KEYBINDS 1
-
-		document.addEventListener("keydown", (event) => {
-			if (event.key == key1 && Keydown1 == false) {
-
-				Keydown1 = true
-				bar1.style.backgroundColor = "pink"
-
-			} 
-		})
-
-		document.addEventListener("keyup", (event) => {
-			if (event.key == key1) {
-				Keydown1 = false
-				bar1.style.backgroundColor = "black"
-			} 
-		})
-
-		//---------------------------------------------// KEYBINDS 2
-
-		document.addEventListener("keydown", (event) => {
-			if (event.key == key2 && Keydown2 == false) {
-
-				Keydown2 = true
-				bar2.style.backgroundColor = "Cyan"
-
-			} 
-		})
-
-		document.addEventListener("keyup", (event) => {
-			if (event.key == key2) {
-				Keydown2 = false
-				bar2.style.backgroundColor = "black"
-			} 
-		})
-
-		//---------------------------------------------// KEYBINDS 3
-
-		document.addEventListener("keydown", (event) => {
-			if (event.key == key3 && Keydown3 == false) {
-
-				Keydown3 = true
-				bar3.style.backgroundColor = "Cyan"
-
-			} 
-		})
-
-		document.addEventListener("keyup", (event) => {
-			if (event.key == key3) {
-				Keydown3 = false
-				bar3.style.backgroundColor = "black"
-			} 
-		})
-
-		//---------------------------------------------// KEYBINDS 4
-
-		document.addEventListener("keydown", (event) => {
-			if (event.key == key4 && Keydown4 == false) {
-
-				Keydown4 = true
-				bar4.style.backgroundColor = "pink"
-
-			} 
-		})
-
-		document.addEventListener("keyup", (event) => {
-			if (event.key == key4) {
-				Keydown4 = false
-				bar4.style.backgroundColor = "black"
-			} 
-		})
-
-		//---------------------------------------------// NOTE FALLING
-
-		note1.style.opacity = 0
-		note2.style.opacity = 0
-		note3.style.opacity = 0
-		note4.style.opacity = 0
-
-
-		document.addEventListener("keydown", (event) => {
-			if (event.key == " " && started == false) {
-				started = true
-
-				note1.style.opacity = 1
-				note2.style.opacity = 1
-				note3.style.opacity = 1
-				note4.style.opacity = 1
-
-		// Function to generate a random interval for note falling
-        function getRandomInterval() {
-            return Math.random() * 1000 + 200;
+    document.addEventListener("keydown", (event) => {
+        if (event.key == key1 && !Keydown1) {
+            Keydown1 = true;
+            bar1.style.backgroundColor = "pink";
         }
+    });
 
-        // Function to start the falling of a note
-        function startNoteFall(noteId) {
-            var note = document.getElementById(noteId);
-            var position = 0;
-            var speed = parseInt(noteSpeed); // Adjust this value to change the falling speed
+    document.addEventListener("keyup", (event) => {
+        if (event.key == key1) {
+            Keydown1 = false;
+            bar1.style.backgroundColor = "black";
+        }
+    });
 
-            // Function to update note position
-            function updateNotePosition() {
-                position += speed;
-                note.style.top = position + "px";
+    document.addEventListener("keydown", (event) => {
+        if (event.key == key2 && !Keydown2) {
+            Keydown2 = true;
+            bar2.style.backgroundColor = "Cyan";
+        }
+    });
 
-                console.log(position)
+    document.addEventListener("keyup", (event) => {
+        if (event.key == key2) {
+            Keydown2 = false;
+            bar2.style.backgroundColor = "black";
+        }
+    });
 
-                // Check if note reached a certain height
-                if (position < 645) {
-                    requestAnimationFrame(updateNotePosition);
-                } else {
-                    // Restart the falling animation
-                    position = 0;
-                    setTimeout(updateNotePosition, getRandomInterval());
-                }
+    document.addEventListener("keydown", (event) => {
+        if (event.key == key3 && !Keydown3) {
+            Keydown3 = true;
+            bar3.style.backgroundColor = "Cyan";
+        }
+    });
+
+    document.addEventListener("keyup", (event) => {
+        if (event.key == key3) {
+            Keydown3 = false;
+            bar3.style.backgroundColor = "black";
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key == key4 && !Keydown4) {
+            Keydown4 = true;
+            bar4.style.backgroundColor = "pink";
+        }
+    });
+
+    document.addEventListener("keyup", (event) => {
+        if (event.key == key4) {
+            Keydown4 = false;
+            bar4.style.backgroundColor = "black";
+        }
+    });
+
+    note1.style.opacity = 0;
+    note2.style.opacity = 0;
+    note3.style.opacity = 0;
+    note4.style.opacity = 0;
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key == " " && !started) {
+            started = true;
+            note1.style.opacity = 1;
+            note2.style.opacity = 1;
+            note3.style.opacity = 1;
+            note4.style.opacity = 1;
+
+            function getRandomInterval() {
+                return Math.random() * 1000 + 200;
             }
 
-            // Start updating note position
-            updateNotePosition();
+            function startNoteFall(noteId) {
+                var note = document.getElementById(noteId);
+                var position = 0;
+
+                function updateNotePosition() {
+                    if (position + noteSpeed >= 652) {
+                        position = 652;
+                        note.style.top = position + "px";
+                        setTimeout(() => {
+                            position = -30;
+                            note.style.top = position + "px";
+                            setTimeout(updateNotePosition, getRandomInterval());
+                        }, 200);
+                    } else {
+                        position += noteSpeed;
+                        note.style.top = position + "px";
+                        requestAnimationFrame(updateNotePosition);
+                    }
+                }
+
+                updateNotePosition();
+            }
+
+            startNoteFall("note1");
+            startNoteFall("note2");
+            startNoteFall("note3");
+            startNoteFall("note4");
         }
-
-        // Start falling of each note
-        startNoteFall("note1");
-        startNoteFall("note2");
-        startNoteFall("note3");
-        startNoteFall("note4");
-			} 
-		})
-
-		
-
-
-	</script>
+    });
+</script>
 </body>
 
 

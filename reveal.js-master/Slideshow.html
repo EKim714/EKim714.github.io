@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/white-contrast.css">
+		<link rel="stylesheet" href="dist/theme/blood.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -29,6 +29,8 @@
 					<div id="stick2">
 						<img  src="Stickman2.png" width="450px" height="450px">
 					</div>
+					<div id="ground">
+					</div>
 				</section>
 
 			</div>
@@ -42,6 +44,14 @@
 
 			var stick1 = document.getElementById("stick1")
 			var stick2 = document.getElementById("stick2")
+			var ground = document.getElementById("ground")
+
+			ground.style.position = "absolute"
+			ground.style.height = "7px"
+			ground.style.width = "1700px"
+			ground.style.left = "-200px"
+			ground.style.top = "380px"
+			ground.style.backgroundColor = "black"
 
 			stick1.style.position = "absolute"
 			stick2.style.position = "absolute"
